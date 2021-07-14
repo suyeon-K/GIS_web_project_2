@@ -8,6 +8,7 @@
             <h4>Sign Up</h4>
         </div>
         <div>
+
             <form action="{% url 'accountapp:create' %}" method="post">
                 {% csrf_token %}
                 {{ form }}
