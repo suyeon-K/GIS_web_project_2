@@ -4,7 +4,7 @@
 }
 
 .myspace_header_button {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .myspace_footer_logo {
@@ -42,4 +42,15 @@
 
 .round_button:hover {
     color : dimgrey;
+}
+
+.article_content {
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.article_image {
+    border-radius: 2rem;
+    width: 60%;
+    box-shadow: 0 0 1rem darkgray;
 }
