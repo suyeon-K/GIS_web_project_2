@@ -13,6 +13,7 @@ from django.views.generic import RedirectView
 from articleapp.models import Article
 from likeapp.models import LikeRecord
 
+
 @transaction.atomic
 def db_transaction(user, article):
     article.like += 1
@@ -41,6 +42,8 @@ class LikeArticleView(RedirectView):
             # 좋아요 반영 X
             messages.add_message(request, messages.ERROR, '좋아요는 한번만 가능합니다')
             return HttpResponseRedirect(reverse('articleapp:detail', kwargs={'pk': kwargs['article_pk']}))
+
+        return super().get(request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):
         return reverse('articleapp:detail', kwargs={'pk' : kwargs['article_pk']})
